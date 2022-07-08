@@ -4,6 +4,7 @@ import './App.css';
 import SearchFormB from './SearchFormB';
 import SearchForm from './SearchForm';
 import Stock, { StockProps } from './Stock';
+import SearchFormHook from './SearchFormHook';
 
 // https://github.com/typescript-cheatsheets/react#reacttypescript-cheatsheets
 
@@ -30,13 +31,15 @@ class App extends Component<any, AppState> {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            <SearchFormHook></SearchFormHook>
+          </p>
           <p onClick={this.mostroMessaggio}>
             Cliccami.
           </p>
           {this.state.showMsg && <p>Messaggio nascosto</p>}
           
-          <SearchFormB ></SearchFormB>
+          {/* <SearchFormB ></SearchFormB> */}
           <p>
             <SearchForm></SearchForm>
           </p>
