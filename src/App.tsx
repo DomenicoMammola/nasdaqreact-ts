@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchFormB from './SearchFormB';
 import SearchForm from './SearchForm';
 import SearchFormHook from './SearchFormHook';
 import StockOld from './StockOld';
 import Stock, { StockProps, StockQuotationProps } from './Stock';
+import StockHook from './StockHook';
 
 // https://github.com/typescript-cheatsheets/react#reacttypescript-cheatsheets
 
@@ -62,11 +64,13 @@ class App extends Component<any, AppState> {
   render() {
     console.log('2g) GENITORE: render');
     return (
-      <div className="App">
+      <div className="App container-fluid">
         <header className="App-header">          
           <p>Applicazione stock quote</p>
+          <StockHook nome='Ciccio' eta={10}></StockHook>
+
           <button onClick={this.aggiornoStock}>TopStock</button>
-          {this.state.listaStock.map(el => <Stock key={el.nome} datistock={el} />)}
+          {this.state.listaStock.map((el, index) => <Stock key={index} datistock={el} />)}
 
           {/*
           <p>

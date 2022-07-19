@@ -23,9 +23,11 @@ export class Stock extends React.Component<StockProps, StockState> {
     }
     componentDidUpdate(prevProps : StockProps, prevState: StockState){
         console.log('4f) FIGLIO - DidUpdate ' + this.props.datistock.nome);
+        
         if (prevProps.datistock.quotazione !== this.props.datistock.quotazione) {
             this.setState((state : StockState, props: StockProps) => ({quotazione: props.datistock.quotazione}));
         }
+        
     }
     aggiornoStock = () => {
         console.log('aggiornoStock');
