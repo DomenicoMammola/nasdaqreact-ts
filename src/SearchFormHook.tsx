@@ -1,4 +1,5 @@
 //https://www.toptal.com/react/react-hooks-typescript-example
+//https://www.digitalocean.com/community/tutorials/how-to-add-login-authentication-to-react-applications
 
 import React, { useState } from 'react'
 
